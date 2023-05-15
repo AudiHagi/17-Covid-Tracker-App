@@ -2,19 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="404dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="20dp"
-        android:background="#c0c0c0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardCont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +15,8 @@
         android:layout_marginBottom="20dp"
         android:elevation="10dp"
         app:cardCornerRadius="10dp"
-        app:layout_constraintTop_toTopOf="@+id/view">
+        app:strokeColor="?attr/colorOnSecondary"
+        app:strokeWidth="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -180,6 +172,6 @@
 
             </RelativeLayout>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
