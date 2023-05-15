@@ -1,15 +1,19 @@
 package com.portofolio.CovidTracker.ui.country
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.portofolio.CovidTracker.R
+import com.portofolio.CovidTracker.ui.countrydetail.CountryCovidDetailActivity
 import java.util.*
 
 class CountryCovidAdapter(var countriescovid: ArrayList<CountryCovid>, var context: Context) :
@@ -35,6 +39,55 @@ class CountryCovidAdapter(var countriescovid: ArrayList<CountryCovid>, var conte
         holder.tvCountryRecoverD.text = countryCovid.getmRecoverC()
         Glide.with(context).load(countryCovid.getmFlag()).apply(RequestOptions()).override(240, 160)
             .into(holder.imgFlagCountry)
+        holder.cardView.setOnClickListener {
+            Toast.makeText(context, countryCovid.getmCountry(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CountryCovidDetailActivity::class.java)
+            //send parameters to ContinentCovidDetail Activity
+            intent.putExtra("country_name", countryCovid.getmCountry())
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
+        // set event click on country name
+        holder.tvCountryNameD.setOnClickListener {
+            Toast.makeText(context, countryCovid.getmCountry(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CountryCovidDetailActivity::class.java)
+            //send parameters to ContinentCovidDetail Activity
+            intent.putExtra("country_name", countryCovid.getmCountry())
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
+        holder.imgFlagCountry.setOnClickListener {
+            Toast.makeText(context, countryCovid.getmCountry(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CountryCovidDetailActivity::class.java)
+            //send parameters to ContinentCovidDetail Activity
+            intent.putExtra("country_name", countryCovid.getmCountry())
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
+        holder.tvCountryCaseD.setOnClickListener {
+            Toast.makeText(context, countryCovid.getmCountry(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CountryCovidDetailActivity::class.java)
+            //send parameters to ContinentCovidDetail Activity
+            intent.putExtra("country_name", countryCovid.getmCountry())
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
+        holder.tvCountryDeathD.setOnClickListener {
+            Toast.makeText(context, countryCovid.getmCountry(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CountryCovidDetailActivity::class.java)
+            //send parameters to ContinentCovidDetail Activity
+            intent.putExtra("country_name", countryCovid.getmCountry())
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
+        holder.tvCountryRecoverD.setOnClickListener {
+            Toast.makeText(context, countryCovid.getmCountry(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CountryCovidDetailActivity::class.java)
+            //send parameters to ContinentCovidDetail Activity
+            intent.putExtra("country_name", countryCovid.getmCountry())
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -47,8 +100,10 @@ class CountryCovidAdapter(var countriescovid: ArrayList<CountryCovid>, var conte
         var tvCountryDeathD: TextView
         var tvCountryRecoverD: TextView
         var imgFlagCountry: ImageView
+        var cardView: CardView
 
         init {
+            cardView = itemView.findViewById(R.id.cardCountry)
             tvCountryNameD = itemView.findViewById(R.id.tvCountryName)
             tvCountryCaseD = itemView.findViewById(R.id.tvCountryCase)
             tvCountryDeathD = itemView.findViewById(R.id.tvCountryDeath)
