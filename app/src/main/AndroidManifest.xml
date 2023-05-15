@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CovidTracker"
         tools:targetApi="31">
         <activity
+            android:name=".ui.country.ListCountryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.continentdetail.ContinentCovidDetailActivity"
             android:exported="false" />
         <activity

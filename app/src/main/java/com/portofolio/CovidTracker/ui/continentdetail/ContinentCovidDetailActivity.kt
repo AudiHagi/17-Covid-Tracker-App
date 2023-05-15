@@ -12,7 +12,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.portofolio.CovidTracker.R
-import com.portofolio.CovidTracker.ui.splash.SplashScreenActivity
+import com.portofolio.CovidTracker.ui.country.ListCountryActivity
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 import org.json.JSONException
@@ -44,7 +44,7 @@ class ContinentCovidDetailActivity : AppCompatActivity() {
         ContinentNameDetail.text = intent.getStringExtra("continent_name")
         getDetailCovidContinent()
         ButtonCountry.setOnClickListener {
-            val intentToList = Intent(applicationContext, SplashScreenActivity::class.java)
+            val intentToList = Intent(applicationContext, ListCountryActivity::class.java)
             intentToList.putExtra("continent_name", ContinentNameDetail.text)
             startActivity(intentToList)
         }
