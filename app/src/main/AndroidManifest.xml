@@ -4,6 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -16,17 +22,26 @@
         android:theme="@style/Theme.CovidTracker"
         tools:targetApi="31">
         <activity
-            android:name=".ui.countrydetail.CountryCovidDetailActivity"
+            android:name=".ui.activity.countrydetail.CountryCovidDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.country.ListCountryActivity"
+            android:name=".ui.activity.country.ListCountryActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.continentdetail.ContinentCovidDetailActivity"
+            android:name=".ui.activity.continentdetail.ContinentCovidDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <receiver
+            android:name=".util.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
@@ -34,7 +49,6 @@
             android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

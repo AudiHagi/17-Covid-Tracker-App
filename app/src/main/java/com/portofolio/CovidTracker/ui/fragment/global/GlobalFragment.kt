@@ -1,4 +1,4 @@
-package com.portofolio.CovidTracker.ui.home
+package com.portofolio.CovidTracker.ui.fragment.global
 
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +19,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import java.util.*
 
-class HomeFragment : Fragment() {
+class GlobalFragment : Fragment() {
     var ascending: ImageButton? = null
     var descending: ImageButton? = null
     var backtotop1: ImageButton? = null
@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root: View = inflater.inflate(R.layout.fragment_home, container, false)
+        val root: View = inflater.inflate(R.layout.fragment_global, container, false)
         mRecyclerView = root.findViewById(R.id.rvContinent)
         editsearch = root.findViewById(R.id.search)
         ascending = root.findViewById(R.id.sortAsc)
@@ -175,7 +175,7 @@ class HomeFragment : Fragment() {
         }
 
     companion object {
-        private val TAG = HomeFragment::class.java.simpleName
+        private val TAG = GlobalFragment::class.java.simpleName
     }
 
 }

@@ -1,4 +1,4 @@
-package com.portofolio.CovidTracker.ui.home
+package com.portofolio.CovidTracker.ui.fragment.global
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.portofolio.CovidTracker.R
-import com.portofolio.CovidTracker.ui.continentdetail.ContinentCovidDetailActivity
+import com.portofolio.CovidTracker.ui.activity.continentdetail.ContinentCovidDetailActivity
 import java.util.*
 
 class ContinentCovidAdapter(var continentalcovid: ArrayList<ContinentCovid>, var context: Context) :

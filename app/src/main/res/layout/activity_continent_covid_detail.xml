@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:padding="10dp"
-    tools:context=".ui.continentdetail.ContinentCovidDetailActivity">
+    tools:context=".ui.activity.continentdetail.ContinentCovidDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,11 +20,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="CONTINENT NAME"
+            android:text="@string/placeholder_continent"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="32dp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -77,7 +77,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="CASES"
+                            android:text="@string/title_cases"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -97,7 +97,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:paddingLeft="10dp"
-                            android:text="DEATH"
+                            android:text="@string/title_death"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -117,7 +117,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="RECOVER"
+                            android:text="@string/title_recover"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -148,9 +148,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:text="CASE STATISTIC"
+                    android:text="@string/title_case_statistic"
                     android:textColor="@color/black"
-                    android:textSize="23sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <View
@@ -171,7 +171,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CASES"
+                        android:text="@string/title_cases"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -181,9 +181,9 @@
                         android:layout_height="wrap_content"
                         android:layout_toLeftOf="@+id/peoplecase"
                         android:fontFamily="sans-serif-light"
-                        android:text="0"
+                        android:text="@string/placeholder_total"
                         android:textAlignment="textEnd"
-                        android:textColor="@color/olive_tone"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -193,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginLeft="5dp"
-                        android:text="PEOPLE"
+                        android:text="@string/people"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </RelativeLayout>
@@ -216,7 +216,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="DEATH"
+                        android:text="@string/title_death"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -226,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toLeftOf="@+id/peopledeath"
                         android:fontFamily="sans-serif-light"
-                        android:text="0"
+                        android:text="@string/placeholder_total"
                         android:textAlignment="textEnd"
                         android:textColor="@color/red"
                         android:textSize="18sp"
@@ -238,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginLeft="5dp"
-                        android:text="PEOPLE"
+                        android:text="@string/people"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -262,7 +262,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="RECOVER"
+                        android:text="@string/title_recover"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -272,7 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toLeftOf="@+id/peoplerecover"
                         android:fontFamily="sans-serif-light"
-                        android:text="0"
+                        android:text="@string/placeholder_total"
                         android:textAlignment="textEnd"
                         android:textColor="@color/dark_green"
                         android:textSize="18sp"
@@ -284,7 +284,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginLeft="5dp"
-                        android:text="PEOPLE"
+                        android:text="@string/people"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -305,10 +305,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="#0b3c49"
-                android:text="COUNTRY LIST"
+                android:text="@string/button_country_list"
                 android:textColor="@color/white"
-                android:textFontWeight="1"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -319,10 +318,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:gravity="center"
-            android:text="LAST UPDATED"
+            android:text="@string/last_updated"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -330,10 +329,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="DATE"
+            android:text="@string/placeholder_date"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>

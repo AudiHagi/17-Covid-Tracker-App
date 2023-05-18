@@ -1,4 +1,4 @@
-package com.portofolio.CovidTracker.ui.country
+package com.portofolio.CovidTracker.ui.activity.country
 
 import android.content.Context
 import android.content.Intent
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.portofolio.CovidTracker.R
-import com.portofolio.CovidTracker.ui.countrydetail.CountryCovidDetailActivity
+import com.portofolio.CovidTracker.ui.activity.countrydetail.CountryCovidDetailActivity
 import java.util.*
 
 class CountryCovidAdapter(var countriescovid: ArrayList<CountryCovid>, var context: Context) :

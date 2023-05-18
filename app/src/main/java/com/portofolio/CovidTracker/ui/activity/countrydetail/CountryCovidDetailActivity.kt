@@ -1,18 +1,15 @@
-package com.portofolio.CovidTracker.ui.continentdetail
+package com.portofolio.CovidTracker.ui.activity.countrydetail
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.portofolio.CovidTracker.R
-import com.portofolio.CovidTracker.ui.country.ListCountryActivity
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 import org.json.JSONException
@@ -20,20 +17,19 @@ import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ContinentCovidDetailActivity : AppCompatActivity() {
-    lateinit var ContinentNameDetail: TextView
+class CountryCovidDetailActivity : AppCompatActivity() {
+
+    lateinit var CountryNameDetail: TextView
     lateinit var TotalConfirmedDetail: TextView
     lateinit var TotalDeathDetail: TextView
     lateinit var TotalRecoveredDetail: TextView
     lateinit var LastUpdateDetail: TextView
-    lateinit var ButtonCountry: Button
     lateinit var pieChart: PieChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_continent_covid_detail)
-        ButtonCountry = findViewById<View>(R.id.btncountry) as Button
-        ContinentNameDetail = findViewById<View>(R.id.continentNameDetail) as TextView
+        setContentView(R.layout.activity_country_covid_detail)
+        CountryNameDetail = findViewById<View>(R.id.countryNameDetail) as TextView
         TotalConfirmedDetail = findViewById<View>(R.id.totalConfirmedDetail) as TextView
         TotalDeathDetail = findViewById<View>(R.id.totalDeathDetail) as TextView
         TotalRecoveredDetail = findViewById<View>(R.id.totalRecoveredDetail) as TextView
@@ -41,13 +37,8 @@ class ContinentCovidDetailActivity : AppCompatActivity() {
         LastUpdateDetail = findViewById<View>(R.id.datelastUpdated) as TextView
         // get passed parameter
         val intent = intent
-        ContinentNameDetail.text = intent.getStringExtra("continent_name")
-        getDetailCovidContinent()
-        ButtonCountry.setOnClickListener {
-            val intentToList = Intent(applicationContext, ListCountryActivity::class.java)
-            intentToList.putExtra("continent_name", ContinentNameDetail.text)
-            startActivity(intentToList)
-        }
+        CountryNameDetail.text = intent.getStringExtra("country_name")
+        getDetailCovidCountry()
     }
 
     private fun getLastUpdated(milisecond: Long): String? {
@@ -57,9 +48,9 @@ class ContinentCovidDetailActivity : AppCompatActivity() {
         return formatDate.format(calendar.time)
     }
 
-    private fun getDetailCovidContinent() {
+    private fun getDetailCovidCountry() {
         val URL =
-            "https://disease.sh/v3/covid-19/continents/" + ContinentNameDetail.text.toString()
+            "https://disease.sh/v3/covid-19/countries/" + CountryNameDetail.text.toString()
                 .lowercase(
                     Locale.getDefault()
                 ).trim { it <= ' ' }

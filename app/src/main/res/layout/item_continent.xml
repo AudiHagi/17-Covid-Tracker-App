@@ -30,7 +30,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="CONTINENT NAME"
+                android:text="@string/placeholder_continent"
                 android:textColor="@color/black"
                 android:textSize="23sp"
                 android:textStyle="bold" />
@@ -53,7 +53,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CASES"
+                    android:text="@string/title_cases"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/peoplecase"
                     android:fontFamily="sans-serif-light"
-                    android:text="0"
+                    android:text="@string/placeholder_total"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="5dp"
-                    android:text="PEOPLE"
+                    android:text="@string/people"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </RelativeLayout>
@@ -98,7 +98,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DEATH"
+                    android:text="@string/title_death"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/peopledeath"
                     android:fontFamily="sans-serif-light"
-                    android:text="0"
+                    android:text="@string/placeholder_total"
                     android:textAlignment="textEnd"
                     android:textColor="@color/red"
                     android:textSize="18sp"
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="5dp"
-                    android:text="PEOPLE"
+                    android:text="@string/people"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -144,7 +144,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="RECOVER"
+                    android:text="@string/title_recover"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -154,9 +154,9 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/peoplerecover"
                     android:fontFamily="sans-serif-light"
-                    android:text="0"
+                    android:text="@string/placeholder_total"
                     android:textAlignment="textEnd"
-                    android:textColor="#2C7B0B"
+                    android:textColor="@color/green1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -166,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="5dp"
-                    android:text="PEOPLE"
+                    android:text="@string/people"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 

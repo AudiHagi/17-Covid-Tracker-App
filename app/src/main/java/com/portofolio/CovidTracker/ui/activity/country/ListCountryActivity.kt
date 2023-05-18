@@ -1,4 +1,4 @@
-package com.portofolio.CovidTracker.ui.country
+package com.portofolio.CovidTracker.ui.activity.country
 
 import android.os.Bundle
 import android.view.View

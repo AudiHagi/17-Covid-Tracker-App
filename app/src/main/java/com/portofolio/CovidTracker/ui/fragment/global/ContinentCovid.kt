@@ -1,4 +1,4 @@
-package com.portofolio.CovidTracker.ui.home
+package com.portofolio.CovidTracker.ui.fragment.global
 
 class ContinentCovid(
     var mContinent: String,

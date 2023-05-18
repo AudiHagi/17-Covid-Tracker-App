@@ -2,14 +2,31 @@
     <string name="app_name">Covid Tracker</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Covid-19 Tracker</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_global">Global</string>
+    <string name="menu_setting">Settings</string>
     <string name="menu_slideshow">Slideshow</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="people">PEOPLE</string>
+    <string name="placeholder_total">0</string>
+    <string name="placeholder_continent">CONTINENT NAME</string>
+    <string name="title_cases">CASES</string>
+    <string name="title_death">DEATH</string>
+    <string name="title_recover">RECOVER</string>
+    <string name="title_case_statistic">CASE STATISTIC</string>
+    <string name="placeholder_country">COUNTRY NAME</string>
+    <string name="button_country_list">COUNTRY LIST</string>
+    <string name="last_updated">LAST UPDATED</string>
+    <string name="placeholder_date">DATE</string>
+    <string name="cd_ascending_sort">Ascending Sort</string>
+    <string name="cd_descending_sort">Descending Sort</string>
+    <string name="cd_go_to_top">Go To Top</string>
+    <string name="home_continent_case">COVID 19 CONTINENT CASE</string>
+    <string name="notification_enabled_button">Notification Enabled</string>
+    <string name="notification_disabled_button">Notification Disabled</string>
+    <string name="change_language_button">Change Language</string>
+    <string name="alarm_message1">Have you seen the Covid-19 cases today ?</string>
+    <string name="alarm_message2">Let\'s check now</string>
 </resources>

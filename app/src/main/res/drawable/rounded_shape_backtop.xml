@@ -96,7 +96,7 @@
     <!-- Background -->
     <item>
         <shape>
-            <solid android:color="#000000" />
+            <solid android:color="#995C5C5C" />
             <corners android:radius="25dp" />
         </shape>
     </item>
