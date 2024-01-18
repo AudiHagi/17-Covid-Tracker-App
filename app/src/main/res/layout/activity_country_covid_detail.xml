@@ -13,12 +13,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/countryNameDetail"
+            android:id="@+id/tvCountryNameDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/placeholder_country"
+            android:text="@string/textCountryName"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -43,11 +43,11 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <org.eazegraph.lib.charts.PieChart xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/piechart"
+                <org.eazegraph.lib.charts.PieChart
+                    android:id="@+id/pieChart"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
@@ -59,7 +59,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp">
+                    android:paddingStart="5dp"
+                    tools:ignore="RtlSymmetry">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -74,8 +75,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="@string/title_cases"
+                            android:paddingStart="10dp"
+                            android:text="@string/textTitleCases"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -94,8 +95,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:paddingLeft="10dp"
-                            android:text="@string/title_death"
+                            android:paddingStart="10dp"
+                            android:text="@string/textTitleDeath"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -114,8 +115,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="@string/title_recover"
+                            android:paddingStart="10dp"
+                            android:text="@string/textTitleRecover"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -146,7 +147,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:text="@string/title_case_statistic"
+                    android:text="@string/textTitleCaseStatistic"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -169,29 +170,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_cases"
+                        android:text="@string/textTitleCases"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:ignore="RelativeOverlap" />
 
                     <TextView
-                        android:id="@+id/totalConfirmedDetail"
+                        android:id="@+id/tvTotalConfirmedDetail"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/peoplecase"
+                        android:layout_toStartOf="@+id/tvPeopleCase"
                         android:fontFamily="sans-serif-light"
-                        android:text="@string/placeholder_total"
+                        android:text="@string/textTotal"
                         android:textAlignment="textEnd"
                         android:textColor="@color/olive_tone"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/peoplecase"
+                        android:id="@+id/tvPeopleCase"
                         android:layout_width="65dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="5dp"
-                        android:text="@string/people"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/textPeople"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </RelativeLayout>
@@ -214,29 +216,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_death"
+                        android:text="@string/textTitleDeath"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:ignore="RelativeOverlap" />
 
                     <TextView
-                        android:id="@+id/totalDeathDetail"
+                        android:id="@+id/tvTotalDeathDetail"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/peopledeath"
+                        android:layout_toStartOf="@+id/tvPeopleDeath"
                         android:fontFamily="sans-serif-light"
-                        android:text="@string/placeholder_total"
+                        android:text="@string/textTotal"
                         android:textAlignment="textEnd"
                         android:textColor="@color/red"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/peopledeath"
+                        android:id="@+id/tvPeopleDeath"
                         android:layout_width="65dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="5dp"
-                        android:text="@string/people"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/textPeople"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -260,29 +263,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_recover"
+                        android:text="@string/textTitleRecover"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:ignore="RelativeOverlap" />
 
                     <TextView
-                        android:id="@+id/totalRecoveredDetail"
+                        android:id="@+id/tvTotalRecoveredDetail"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/peoplerecover"
+                        android:layout_toStartOf="@+id/tvPeopleRecover"
                         android:fontFamily="sans-serif-light"
-                        android:text="@string/placeholder_total"
+                        android:text="@string/textTotal"
                         android:textAlignment="textEnd"
                         android:textColor="@color/dark_green"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/peoplerecover"
+                        android:id="@+id/tvPeopleRecover"
                         android:layout_width="65dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="5dp"
-                        android:text="@string/people"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/textPeople"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -291,24 +295,24 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/lastUpdated"
+            android:id="@+id/tvLastUpdated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:gravity="center"
-            android:text="@string/last_updated"
+            android:text="@string/textLastUpdated"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/datelastUpdated"
+            android:id="@+id/tvDateLastUpdated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/placeholder_date"
+            android:text="@string/textPlaceholderDate"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"

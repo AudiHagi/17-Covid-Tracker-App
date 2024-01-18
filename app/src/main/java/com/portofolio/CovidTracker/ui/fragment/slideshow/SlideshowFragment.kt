@@ -23,12 +23,12 @@ class SlideshowFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+            ViewModelProvider(this)[SlideshowViewModel::class.java]
 
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
+        val textView: TextView = binding.textSlideShow
         slideshowViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

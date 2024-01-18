@@ -1,5 +1,6 @@
 package com.portofolio.CovidTracker.ui.fragment.global
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -13,13 +14,15 @@ import com.portofolio.CovidTracker.R
 import com.portofolio.CovidTracker.ui.activity.continentdetail.ContinentCovidDetailActivity
 import java.util.*
 
-class ContinentCovidAdapter(var continentalcovid: ArrayList<ContinentCovid>, var context: Context) :
+class ContinentCovidAdapter(
+    private var continentalCovid: ArrayList<ContinentCovid>,
+    var context: Context
+) :
     RecyclerView.Adapter<ContinentCovidAdapter.ViewHolder>() {
-    var arrayList: ArrayList<ContinentCovid>
+    private var arrayList: ArrayList<ContinentCovid> = ArrayList()
 
     init {
-        arrayList = ArrayList()
-        arrayList.addAll(continentalcovid)
+        arrayList.addAll(continentalCovid)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,51 +32,51 @@ class ContinentCovidAdapter(var continentalcovid: ArrayList<ContinentCovid>, var
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val continentCovid = continentalcovid[position]
-        holder.tvContinentNameD.text = continentCovid.getmContinent()
-        holder.tvContinentCaseD.text = continentCovid.getmCase()
-        holder.tvContinentDeathD.text = continentCovid.getmDeaths()
-        holder.tvContinentRecoverD.text = continentCovid.getmRecovered()
+        val continentCovid = continentalCovid[position]
+        holder.tvContinentNameD.text = continentCovid.getContinent()
+        holder.tvContinentCaseD.text = continentCovid.getCase()
+        holder.tvContinentDeathD.text = continentCovid.getDeaths()
+        holder.tvContinentRecoverD.text = continentCovid.getRecovered()
         holder.cardView.setOnClickListener {
-            Toast.makeText(context, continentCovid.getmContinent(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
-            intent.putExtra("continent_name", continentCovid.getmContinent())
+            intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         // set event click on country name
         holder.tvContinentNameD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getmContinent(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
-            intent.putExtra("continent_name", continentCovid.getmContinent())
+            intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         holder.tvContinentCaseD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getmContinent(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
-            intent.putExtra("continent_name", continentCovid.getmContinent())
+            intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         holder.tvContinentDeathD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getmContinent(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
-            intent.putExtra("continent_name", continentCovid.getmContinent())
+            intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         holder.tvContinentRecoverD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getmContinent(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
-            intent.putExtra("continent_name", continentCovid.getmContinent())
+            intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
-        return continentalcovid.size
+        return continentalCovid.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -84,7 +87,7 @@ class ContinentCovidAdapter(var continentalcovid: ArrayList<ContinentCovid>, var
         var cardView: CardView
 
         init {
-            cardView = itemView.findViewById(R.id.cardCont)
+            cardView = itemView.findViewById(R.id.cardContinent)
             tvContinentNameD = itemView.findViewById(R.id.tvContinentName)
             tvContinentCaseD = itemView.findViewById(R.id.tvContinentCase)
             tvContinentDeathD = itemView.findViewById(R.id.tvContinentDeath)
@@ -92,16 +95,17 @@ class ContinentCovidAdapter(var continentalcovid: ArrayList<ContinentCovid>, var
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun filter(charText: String) {
         var charText = charText
         charText = charText.lowercase(Locale.getDefault())
-        continentalcovid.clear()
-        if (charText.length == 0) {
-            continentalcovid.addAll(arrayList)
+        continentalCovid.clear()
+        if (charText.isEmpty()) {
+            continentalCovid.addAll(arrayList)
         } else {
             for (wp in arrayList) {
-                if (wp.getmContinent().lowercase(Locale.getDefault()).contains(charText)) {
-                    continentalcovid.add(wp)
+                if (wp.getContinent().lowercase(Locale.getDefault()).contains(charText)) {
+                    continentalCovid.add(wp)
                 }
             }
         }

@@ -1,5 +1,6 @@
 package com.portofolio.CovidTracker.util
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,22 +17,23 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.portofolio.CovidTracker.R
 import com.portofolio.CovidTracker.ui.splash.SplashScreenActivity
-import java.util.*
+import java.util.Calendar
 
 class AlarmReceiver : BroadcastReceiver() {
 
+    @SuppressLint("UnsafeProtectedBroadcastReceiver")
     override fun onReceive(context: Context, intent: Intent) {
         val title = context.getString(R.string.alarm_message1)
         val message = context.getString(R.string.alarm_message2)
-        val notifId = 101
-        showAlarmNotification(context, title, message, notifId)
+        val notifyId = 101
+        showAlarmNotification(context, title, message, notifyId)
     }
 
     private fun showAlarmNotification(
         context: Context,
         title: String,
         message: String,
-        notifId: Int
+        notifyId: Int
     ) {
         val channelId = "Channel_1"
         val channelName = "AlarmManager channel"
@@ -68,7 +70,7 @@ class AlarmReceiver : BroadcastReceiver() {
         builder.setContentIntent(pendingIntent)
         builder.setAutoCancel(true)
         val notification = builder.build()
-        notificationManagerCompat.notify(notifId, notification)
+        notificationManagerCompat.notify(notifyId, notification)
     }
 
     fun setRepeatingAlarm(context: Context) {
@@ -93,7 +95,7 @@ class AlarmReceiver : BroadcastReceiver() {
         )
         val toast = Toast.makeText(
             context,
-            context.getString(R.string.notification_enabled_button),
+            context.getString(R.string.textNotificationEnabledButton),
             Toast.LENGTH_SHORT
         )
         val toastLayout = toast.view as? LinearLayout
@@ -141,7 +143,7 @@ class AlarmReceiver : BroadcastReceiver() {
         pendingIntent.cancel()
         val toast = Toast.makeText(
             context,
-            context.getString(R.string.notification_disabled_button),
+            context.getString(R.string.textNotificationDisabledButton),
             Toast.LENGTH_SHORT
         )
         val toastLayout = toast.view as? LinearLayout

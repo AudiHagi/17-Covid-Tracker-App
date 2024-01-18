@@ -1,40 +1,25 @@
 package com.portofolio.CovidTracker.ui.fragment.global
 
 class ContinentCovid(
-    var mContinent: String,
-    var mCase: String,
-    var mDeaths: String,
-    var mRecovered: String
+    private var mContinent: String,
+    private var mCase: String,
+    private var mDeaths: String,
+    private var mRecovered: String
 ) {
-    fun getmContinent(): String {
+    fun getContinent(): String {
         return mContinent
     }
 
-    fun setmContinent(mContinent: String) {
-        this.mContinent = mContinent
-    }
-
-    fun getmDeaths(): String {
+    fun getDeaths(): String {
         return mDeaths
     }
 
-    fun setmDeaths(mDeaths: String) {
-        this.mDeaths = mDeaths
-    }
-
-    fun getmCase(): String {
+    fun getCase(): String {
         return mCase
     }
 
-    fun setmCase(mCase: String) {
-        this.mCase = mCase
-    }
-
-    fun getmRecovered(): String {
+    fun getRecovered(): String {
         return mRecovered
     }
 
-    fun setmRecovered(mRecovered: String) {
-        this.mRecovered = mRecovered
-    }
 }

@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_global">
+    app:startDestination="@+id/navGlobal">
 
     <fragment
-        android:id="@+id/nav_global"
+        android:id="@+id/navGlobal"
         android:name="com.portofolio.CovidTracker.ui.fragment.global.GlobalFragment"
-        android:label="@string/menu_global"
+        android:label="@string/labelMenuGlobal"
         tools:layout="@layout/fragment_global" />
 
     <fragment
-        android:id="@+id/nav_setting"
+        android:id="@+id/navSetting"
         android:name="com.portofolio.CovidTracker.ui.fragment.setting.SettingFragment"
-        android:label="@string/menu_setting"
+        android:label="@string/labelMenuSetting"
         tools:layout="@layout/fragment_setting" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/navSlideShow"
         android:name="com.portofolio.CovidTracker.ui.fragment.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/labelMenuSlideShow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

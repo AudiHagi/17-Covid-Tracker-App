@@ -10,11 +10,11 @@
     tools:context=".ui.activity.country.ListCountryActivity">
 
     <TextView
-        android:id="@+id/titleCountry"
+        android:id="@+id/tvTitleCountry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/placeholder_continent"
+        android:text="@string/textContinentName"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="?attr/colorOnSecondary"
@@ -29,7 +29,7 @@
         android:layout_height="2dp"
         android:background="?attr/colorOnSecondary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleCountry" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleCountry" />
 
     <SearchView
         android:id="@+id/searchCountry"
@@ -54,20 +54,20 @@
         app:layout_constraintTop_toBottomOf="@+id/searchCountry">
 
         <ImageButton
-            android:id="@+id/sortAscCountry"
+            android:id="@+id/ibSortAscCountry"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/imagebutton_border"
-            android:contentDescription="@string/cd_ascending_sort"
+            android:contentDescription="@string/cdAscendingSort"
             android:src="@drawable/ic_ascending" />
 
         <ImageButton
-            android:id="@+id/sortDescCountry"
+            android:id="@+id/ibSortDescCountry"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/imagebutton_border"
-            android:contentDescription="@string/cd_descending_sort"
+            android:contentDescription="@string/cdDescendingSort"
             android:src="@drawable/ic_descending" />
     </LinearLayout>
 
@@ -82,7 +82,7 @@
         tools:listitem="@layout/item_country" />
 
     <ImageButton
-        android:id="@+id/buttonTop"
+        android:id="@+id/ibToTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -90,7 +90,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_shape_backtop"
-        android:contentDescription="@string/cd_go_to_top"
+        android:contentDescription="@string/cdGoToTop"
         android:padding="20dp"
         android:src="@drawable/ic_backtop_24"
         app:layout_constraintBottom_toBottomOf="parent"

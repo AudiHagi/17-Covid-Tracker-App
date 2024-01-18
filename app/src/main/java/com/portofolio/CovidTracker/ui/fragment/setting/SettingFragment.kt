@@ -23,14 +23,13 @@ class SettingFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
-        val root: View = settingBinding.root
-        return root
+        return settingBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        settingBinding.onNotifButton.setOnClickListener { this }
-        settingBinding.offNotifButton.setOnClickListener { this }
+        settingBinding.onNotifyButton.setOnClickListener { this }
+        settingBinding.offNotifyButton.setOnClickListener { this }
         settingBinding.changeLangButton.setOnClickListener { setLanguage() }
     }
 
@@ -40,8 +39,8 @@ class SettingFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.onNotifButton -> alarmReceiver.setRepeatingAlarm(requireContext())
-            R.id.offNotifButton -> alarmReceiver.cancelAlarm(requireContext())
+            R.id.onNotifyButton -> alarmReceiver.setRepeatingAlarm(requireContext())
+            R.id.offNotifyButton -> alarmReceiver.cancelAlarm(requireContext())
         }
     }
 

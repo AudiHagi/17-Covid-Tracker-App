@@ -10,29 +10,30 @@
     tools:context=".ui.fragment.setting.SettingFragment">
 
     <Button
-        android:id="@+id/onNotifButton"
+        android:id="@+id/onNotifyButton"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/notification_enabled_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/offNotifButton"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/notification_disabled_button"
+        android:text="@string/textNotificationEnabledButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/onNotifButton" />
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/offNotifyButton"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/textNotificationDisabledButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onNotifyButton" />
 
     <Button
         android:id="@+id/changeLangButton"
@@ -41,9 +42,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/change_language_button"
+        android:text="@string/textChangeLanguageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/offNotifButton" />
+        app:layout_constraintTop_toBottomOf="@+id/offNotifyButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

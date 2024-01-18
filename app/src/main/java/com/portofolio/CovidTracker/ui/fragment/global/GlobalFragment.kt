@@ -17,61 +17,56 @@ import com.android.volley.toolbox.Volley
 import com.portofolio.CovidTracker.R
 import org.json.JSONArray
 import org.json.JSONException
-import java.util.*
 
 class GlobalFragment : Fragment() {
-    var ascending: ImageButton? = null
-    var descending: ImageButton? = null
-    var backtotop1: ImageButton? = null
-    var editsearch: SearchView? = null
-    lateinit var mRecyclerView: RecyclerView
-    var continentalcovid: ArrayList<ContinentCovid>? = null
+    private var ascending: ImageButton? = null
+    private var descending: ImageButton? = null
+    private var backToTopButton: ImageButton? = null
+    private var editSearch: SearchView? = null
+    private lateinit var myRecyclerView: RecyclerView
+    private var continentalCovid: ArrayList<ContinentCovid>? = null
     var continentCovidAdapter: ContinentCovidAdapter? = null
-    var scrollPosition = 0
+    private var scrollPosition = 0
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val root: View = inflater.inflate(R.layout.fragment_global, container, false)
-        mRecyclerView = root.findViewById(R.id.rvContinent)
-        editsearch = root.findViewById(R.id.search)
-        ascending = root.findViewById(R.id.sortAsc)
-        descending = root.findViewById(R.id.sortDesc)
-        backtotop1 = root.findViewById(R.id.buttonTop)
-        mRecyclerView.layoutManager = LinearLayoutManager(activity)
-        dataApiContinentCasesSortAsc
+        myRecyclerView = root.findViewById(R.id.rvContinent)
+        editSearch = root.findViewById(R.id.search)
+        ascending = root.findViewById(R.id.ibSortAsc)
+        descending = root.findViewById(R.id.ibSortDesc)
+        backToTopButton = root.findViewById(R.id.ibToTop)
+        myRecyclerView.layoutManager = LinearLayoutManager(activity)
+        continentCasesSortAsc
         searchContinent
         sortContinent
-        backtotop
+        backToTop
         return root
     }
 
-    val backtotop: ImageButton?
+    private val backToTop: ImageButton?
         get() {
-            backtotop1?.setOnClickListener { mRecyclerView.smoothScrollToPosition(0) }
-            return backtotop1
+            backToTopButton?.setOnClickListener { myRecyclerView.smoothScrollToPosition(0) }
+            return backToTopButton
         }
-    val sortContinent: Unit
+    private val sortContinent: Unit
         get() {
-            descending!!.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(view: View) {
-                    Toast.makeText(context, "Sort Descending", Toast.LENGTH_SHORT).show()
-                    continentalcovid!!.clear()
-                    dataApiContinentCasesSortDesc
-                }
-            })
-            ascending!!.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(view: View) {
-                    Toast.makeText(context, "Sort Ascending", Toast.LENGTH_SHORT).show()
-                    continentalcovid!!.clear()
-                    dataApiContinentCasesSortAsc
-                }
-            })
+            descending!!.setOnClickListener {
+                Toast.makeText(context, "Sort Descending", Toast.LENGTH_SHORT).show()
+                continentalCovid!!.clear()
+                continentCasesSortDesc
+            }
+            ascending!!.setOnClickListener {
+                Toast.makeText(context, "Sort Ascending", Toast.LENGTH_SHORT).show()
+                continentalCovid!!.clear()
+                continentCasesSortAsc
+            }
         }
-    val searchContinent: Unit
+    private val searchContinent: Unit
         get() {
-            editsearch!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            editSearch!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(s: String): Boolean {
                     return false
                 }
@@ -85,18 +80,18 @@ class GlobalFragment : Fragment() {
             })
         }
 
-    private fun ShowRecyclerView() {
-        continentCovidAdapter = ContinentCovidAdapter(continentalcovid!!, requireActivity())
-        mRecyclerView.adapter = continentCovidAdapter
-        val myLayoutManager = mRecyclerView.layoutManager as LinearLayoutManager?
+    private fun showRecyclerView() {
+        continentCovidAdapter = ContinentCovidAdapter(continentalCovid!!, requireActivity())
+        myRecyclerView.adapter = continentCovidAdapter
+        val myLayoutManager = myRecyclerView.layoutManager as LinearLayoutManager?
         scrollPosition = myLayoutManager!!.findFirstVisibleItemPosition()
     }
 
-    private val dataApiContinentCasesSortAsc: Unit
-        private get() {
+    private val continentCasesSortAsc: Unit
+        get() {
             val queue = Volley.newRequestQueue(activity)
             val url = "https://disease.sh/v3/covid-19/continents"
-            continentalcovid = ArrayList()
+            continentalCovid = ArrayList()
             val stringRequest = StringRequest(
                 Request.Method.GET, url,
                 { response ->
@@ -106,7 +101,7 @@ class GlobalFragment : Fragment() {
                             val jsonArray = JSONArray(response)
                             for (i in 0 until jsonArray.length()) {
                                 val data = jsonArray.getJSONObject(i)
-                                continentalcovid!!.add(
+                                continentalCovid!!.add(
                                     ContinentCovid(
                                         data.getString("continent"),
                                         data.getString("cases"),
@@ -115,13 +110,13 @@ class GlobalFragment : Fragment() {
                                     )
                                 )
                             }
-                            Collections.sort(continentalcovid, object : Comparator<ContinentCovid> {
-                                override fun compare(o1: ContinentCovid, o2: ContinentCovid): Int {
-                                    return o1.getmContinent().compareTo(o2.getmContinent())
+                            continentalCovid?.let {
+                                it.sortWith { o1, o2 ->
+                                    o1.getContinent().compareTo(o2.getContinent())
                                 }
-                            })
+                            }
 
-                            ShowRecyclerView()
+                            showRecyclerView()
                         } catch (e: JSONException) {
                             e.printStackTrace()
                         }
@@ -133,11 +128,11 @@ class GlobalFragment : Fragment() {
         }
 
     //Descending
-    private val dataApiContinentCasesSortDesc: Unit
-        private get() {
+    private val continentCasesSortDesc: Unit
+        get() {
             val queue = Volley.newRequestQueue(activity)
             val url = "https://disease.sh/v3/covid-19/continents"
-            continentalcovid = ArrayList()
+            continentalCovid = ArrayList()
             val stringRequest = StringRequest(
                 Request.Method.GET, url,
                 { response ->
@@ -147,7 +142,7 @@ class GlobalFragment : Fragment() {
                             val jsonArray = JSONArray(response)
                             for (i in 0 until jsonArray.length()) {
                                 val data = jsonArray.getJSONObject(i)
-                                continentalcovid!!.add(
+                                continentalCovid!!.add(
                                     ContinentCovid(
                                         data.getString("continent"),
                                         data.getString("cases"),
@@ -157,13 +152,13 @@ class GlobalFragment : Fragment() {
                                 )
                             }
                             //Descending
-                            Collections.sort(continentalcovid, object : Comparator<ContinentCovid> {
-                                override fun compare(o1: ContinentCovid, o2: ContinentCovid): Int {
-                                    return o1.getmContinent().compareTo(o2.getmContinent())
+                            continentalCovid?.let {
+                                it.sortWith { o1, o2 ->
+                                    o1.getContinent().compareTo(o2.getContinent())
                                 }
-                            })
-                            Collections.reverse(continentalcovid)
-                            ShowRecyclerView()
+                            }
+                            continentalCovid?.reverse()
+                            showRecyclerView()
                         } catch (e: JSONException) {
                             e.printStackTrace()
                         }

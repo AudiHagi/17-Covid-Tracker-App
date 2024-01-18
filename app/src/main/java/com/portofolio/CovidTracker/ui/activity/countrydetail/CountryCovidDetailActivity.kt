@@ -1,5 +1,6 @@
 package com.portofolio.CovidTracker.ui.activity.countrydetail
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -19,67 +20,68 @@ import java.util.*
 
 class CountryCovidDetailActivity : AppCompatActivity() {
 
-    lateinit var CountryNameDetail: TextView
-    lateinit var TotalConfirmedDetail: TextView
-    lateinit var TotalDeathDetail: TextView
-    lateinit var TotalRecoveredDetail: TextView
-    lateinit var LastUpdateDetail: TextView
-    lateinit var pieChart: PieChart
+    private lateinit var countryNameDetail: TextView
+    private lateinit var totalConfirmedDetail: TextView
+    private lateinit var totalDeathDetail: TextView
+    private lateinit var totalRecoveredDetail: TextView
+    private lateinit var lastUpdateDetail: TextView
+    private lateinit var pieChart: PieChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_covid_detail)
-        CountryNameDetail = findViewById<View>(R.id.countryNameDetail) as TextView
-        TotalConfirmedDetail = findViewById<View>(R.id.totalConfirmedDetail) as TextView
-        TotalDeathDetail = findViewById<View>(R.id.totalDeathDetail) as TextView
-        TotalRecoveredDetail = findViewById<View>(R.id.totalRecoveredDetail) as TextView
-        pieChart = findViewById<View>(R.id.piechart) as PieChart
-        LastUpdateDetail = findViewById<View>(R.id.datelastUpdated) as TextView
+        countryNameDetail = findViewById<View>(R.id.tvCountryNameDetail) as TextView
+        totalConfirmedDetail = findViewById<View>(R.id.tvTotalConfirmedDetail) as TextView
+        totalDeathDetail = findViewById<View>(R.id.tvTotalDeathDetail) as TextView
+        totalRecoveredDetail = findViewById<View>(R.id.tvTotalRecoveredDetail) as TextView
+        pieChart = findViewById<View>(R.id.pieChart) as PieChart
+        lastUpdateDetail = findViewById<View>(R.id.tvDateLastUpdated) as TextView
         // get passed parameter
         val intent = intent
-        CountryNameDetail.text = intent.getStringExtra("country_name")
+        countryNameDetail.text = intent.getStringExtra("country_name")
         getDetailCovidCountry()
     }
 
-    private fun getLastUpdated(milisecond: Long): String? {
+    @SuppressLint("SimpleDateFormat")
+    private fun getLastUpdated(millisecond: Long): String? {
         val formatDate = SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss aaa")
         val calendar = Calendar.getInstance()
-        calendar.timeInMillis = milisecond
+        calendar.timeInMillis = millisecond
         return formatDate.format(calendar.time)
     }
 
     private fun getDetailCovidCountry() {
-        val URL =
-            "https://disease.sh/v3/covid-19/countries/" + CountryNameDetail.text.toString()
+        val url =
+            "https://disease.sh/v3/covid-19/countries/" + countryNameDetail.text.toString()
                 .lowercase(
                     Locale.getDefault()
                 ).trim { it <= ' ' }
         val queue = Volley.newRequestQueue(applicationContext)
         val stringRequest = StringRequest(
-            Request.Method.GET, URL,
+            Request.Method.GET, url,
             { response ->
                 try {
                     val jsonObject = JSONObject(response)
-                    TotalConfirmedDetail.text = jsonObject.getString("cases")
-                    TotalDeathDetail.text = jsonObject.getString("deaths")
-                    TotalRecoveredDetail.text = jsonObject.getString("recovered")
-                    LastUpdateDetail.text = getLastUpdated(jsonObject.getLong("updated"))
+                    totalConfirmedDetail.text = jsonObject.getString("cases")
+                    totalDeathDetail.text = jsonObject.getString("deaths")
+                    totalRecoveredDetail.text = jsonObject.getString("recovered")
+                    lastUpdateDetail.text = getLastUpdated(jsonObject.getLong("updated"))
                     pieChart.addPieSlice(
                         PieModel(
-                            "CASES", TotalConfirmedDetail.text.toString().toInt().toFloat(),
+                            "CASES", totalConfirmedDetail.text.toString().toInt().toFloat(),
                             Color.parseColor("#ffe200")
                         )
                     )
                     pieChart.addPieSlice(
                         PieModel(
-                            "DEATHS", TotalDeathDetail.text.toString().toInt().toFloat(),
+                            "DEATHS", totalDeathDetail.text.toString().toInt().toFloat(),
                             Color.parseColor("#EF5350")
                         )
                     )
                     pieChart.addPieSlice(
                         PieModel(
                             "RECOVERED",
-                            TotalRecoveredDetail.text.toString().toInt().toFloat(),
+                            totalRecoveredDetail.text.toString().toInt().toFloat(),
                             Color.parseColor("#66BB6A")
                         )
                     )
