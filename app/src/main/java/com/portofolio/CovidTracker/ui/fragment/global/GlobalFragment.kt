@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -54,12 +53,10 @@ class GlobalFragment : Fragment() {
     private val sortContinent: Unit
         get() {
             descending!!.setOnClickListener {
-                Toast.makeText(context, "Sort Descending", Toast.LENGTH_SHORT).show()
                 continentalCovid!!.clear()
                 continentCasesSortDesc
             }
             ascending!!.setOnClickListener {
-                Toast.makeText(context, "Sort Ascending", Toast.LENGTH_SHORT).show()
                 continentalCovid!!.clear()
                 continentCasesSortAsc
             }

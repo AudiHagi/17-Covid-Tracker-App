@@ -5,7 +5,6 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -66,12 +65,10 @@ class ListCountryActivity : AppCompatActivity() {
 
     private fun getSortCountry() {
         descendingCountry.setOnClickListener {
-            Toast.makeText(applicationContext, "Sort Descending", Toast.LENGTH_SHORT).show()
             countriesCovid.clear()
             getListCountryDesc()
         }
         ascendingCountry.setOnClickListener {
-            Toast.makeText(applicationContext, "Sort Ascending", Toast.LENGTH_SHORT).show()
             countriesCovid.clear()
             getListCountryAsc()
         }

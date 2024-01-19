@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.portofolio.CovidTracker.R
@@ -38,7 +37,6 @@ class ContinentCovidAdapter(
         holder.tvContinentDeathD.text = continentCovid.getDeaths()
         holder.tvContinentRecoverD.text = continentCovid.getRecovered()
         holder.cardView.setOnClickListener {
-            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("continent_name", continentCovid.getContinent())
@@ -46,28 +44,24 @@ class ContinentCovidAdapter(
         }
         // set event click on country name
         holder.tvContinentNameD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         holder.tvContinentCaseD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         holder.tvContinentDeathD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("continent_name", continentCovid.getContinent())
             context.startActivity(intent)
         }
         holder.tvContinentRecoverD.setOnClickListener {
-            Toast.makeText(context, continentCovid.getContinent(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ContinentCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("continent_name", continentCovid.getContinent())

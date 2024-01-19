@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -43,7 +42,6 @@ class CountryCovidAdapter(
         Glide.with(context).load(countryCovid.getFlag()).apply(RequestOptions()).override(240, 160)
             .into(holder.imgFlagCountry)
         holder.cardView.setOnClickListener {
-            Toast.makeText(context, countryCovid.getCountry(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CountryCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("country_name", countryCovid.getCountry())
@@ -52,7 +50,6 @@ class CountryCovidAdapter(
         }
         // set event click on country name
         holder.tvCountryNameD.setOnClickListener {
-            Toast.makeText(context, countryCovid.getCountry(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CountryCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("country_name", countryCovid.getCountry())
@@ -60,7 +57,6 @@ class CountryCovidAdapter(
             context.startActivity(intent)
         }
         holder.imgFlagCountry.setOnClickListener {
-            Toast.makeText(context, countryCovid.getCountry(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CountryCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("country_name", countryCovid.getCountry())
@@ -68,7 +64,6 @@ class CountryCovidAdapter(
             context.startActivity(intent)
         }
         holder.tvCountryCaseD.setOnClickListener {
-            Toast.makeText(context, countryCovid.getCountry(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CountryCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("country_name", countryCovid.getCountry())
@@ -76,7 +71,6 @@ class CountryCovidAdapter(
             context.startActivity(intent)
         }
         holder.tvCountryDeathD.setOnClickListener {
-            Toast.makeText(context, countryCovid.getCountry(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CountryCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("country_name", countryCovid.getCountry())
@@ -84,7 +78,6 @@ class CountryCovidAdapter(
             context.startActivity(intent)
         }
         holder.tvCountryRecoverD.setOnClickListener {
-            Toast.makeText(context, countryCovid.getCountry(), Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CountryCovidDetailActivity::class.java)
             //send parameters to ContinentCovidDetail Activity
             intent.putExtra("country_name", countryCovid.getCountry())
