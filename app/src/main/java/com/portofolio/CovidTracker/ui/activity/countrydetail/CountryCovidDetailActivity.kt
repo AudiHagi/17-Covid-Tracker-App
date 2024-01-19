@@ -30,12 +30,12 @@ class CountryCovidDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_covid_detail)
-        countryNameDetail = findViewById<View>(R.id.tvCountryNameDetail) as TextView
-        totalConfirmedDetail = findViewById<View>(R.id.tvTotalConfirmedDetail) as TextView
-        totalDeathDetail = findViewById<View>(R.id.tvTotalDeathDetail) as TextView
-        totalRecoveredDetail = findViewById<View>(R.id.tvTotalRecoveredDetail) as TextView
-        pieChart = findViewById<View>(R.id.pieChart) as PieChart
-        lastUpdateDetail = findViewById<View>(R.id.tvDateLastUpdated) as TextView
+        countryNameDetail = findViewById<View>(R.id.tv_country_name_detail) as TextView
+        totalConfirmedDetail = findViewById<View>(R.id.tv_total_confirmed_detail) as TextView
+        totalDeathDetail = findViewById<View>(R.id.tv_total_death_detail) as TextView
+        totalRecoveredDetail = findViewById<View>(R.id.tv_total_recovered_detail) as TextView
+        pieChart = findViewById<View>(R.id.pie_chart) as PieChart
+        lastUpdateDetail = findViewById<View>(R.id.tv_date_last_updated) as TextView
         // get passed parameter
         val intent = intent
         countryNameDetail.text = intent.getStringExtra("country_name")

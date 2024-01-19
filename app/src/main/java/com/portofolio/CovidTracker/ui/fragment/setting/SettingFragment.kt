@@ -39,8 +39,8 @@ class SettingFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.onNotifyButton -> alarmReceiver.setRepeatingAlarm(requireContext())
-            R.id.offNotifyButton -> alarmReceiver.cancelAlarm(requireContext())
+            R.id.on_notify_button -> alarmReceiver.setRepeatingAlarm(requireContext())
+            R.id.off_notify_button -> alarmReceiver.cancelAlarm(requireContext())
         }
     }
 

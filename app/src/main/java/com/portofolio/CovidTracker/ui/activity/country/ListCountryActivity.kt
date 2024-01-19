@@ -29,12 +29,12 @@ class ListCountryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_country)
-        countryNameTitle = findViewById<View>(R.id.tvTitleCountry) as TextView
-        editSearchCountry = findViewById<View>(R.id.searchCountry) as SearchView
-        ascendingCountry = findViewById<View>(R.id.ibSortAscCountry) as ImageButton
-        descendingCountry = findViewById<View>(R.id.ibSortDescCountry) as ImageButton
-        backToTop = findViewById<View>(R.id.ibToTop) as ImageButton
-        myRecyclerView = findViewById(R.id.rvCountry)
+        countryNameTitle = findViewById<View>(R.id.tv_title_country) as TextView
+        editSearchCountry = findViewById<View>(R.id.search_country) as SearchView
+        ascendingCountry = findViewById<View>(R.id.ib_sort_asc_country) as ImageButton
+        descendingCountry = findViewById<View>(R.id.ib_sort_desc_country) as ImageButton
+        backToTop = findViewById<View>(R.id.ib_to_top) as ImageButton
+        myRecyclerView = findViewById(R.id.rv_country)
         myRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
         val intent2 = intent
         nameContinent = intent2.getStringExtra("continent_name").toString()

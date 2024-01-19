@@ -106,12 +106,12 @@ class CountryCovidAdapter(
         var cardView: CardView
 
         init {
-            cardView = itemView.findViewById(R.id.cardCountry)
-            tvCountryNameD = itemView.findViewById(R.id.tvCountryName)
-            tvCountryCaseD = itemView.findViewById(R.id.tvCountryCase)
-            tvCountryDeathD = itemView.findViewById(R.id.tvCountryDeath)
-            tvCountryRecoverD = itemView.findViewById(R.id.tvCountryRecover)
-            imgFlagCountry = itemView.findViewById(R.id.ivFlagCountry)
+            cardView = itemView.findViewById(R.id.card_country)
+            tvCountryNameD = itemView.findViewById(R.id.tv_country_name)
+            tvCountryCaseD = itemView.findViewById(R.id.tv_country_case)
+            tvCountryDeathD = itemView.findViewById(R.id.tv_country_death)
+            tvCountryRecoverD = itemView.findViewById(R.id.tv_country_recover)
+            imgFlagCountry = itemView.findViewById(R.id.iv_flag_country)
         }
     }
 

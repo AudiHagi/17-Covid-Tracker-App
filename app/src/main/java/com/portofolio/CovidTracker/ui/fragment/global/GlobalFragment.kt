@@ -33,11 +33,11 @@ class GlobalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val root: View = inflater.inflate(R.layout.fragment_global, container, false)
-        myRecyclerView = root.findViewById(R.id.rvContinent)
+        myRecyclerView = root.findViewById(R.id.rv_continent)
         editSearch = root.findViewById(R.id.search)
-        ascending = root.findViewById(R.id.ibSortAsc)
-        descending = root.findViewById(R.id.ibSortDesc)
-        backToTopButton = root.findViewById(R.id.ibToTop)
+        ascending = root.findViewById(R.id.ib_sort_asc)
+        descending = root.findViewById(R.id.ib_sort_desc)
+        backToTopButton = root.findViewById(R.id.ib_to_top)
         myRecyclerView.layoutManager = LinearLayoutManager(activity)
         continentCasesSortAsc
         searchContinent

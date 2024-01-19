@@ -7,7 +7,7 @@
     android:layout_marginTop="20dp">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardContinent"
+        android:id="@+id/card_continent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -26,13 +26,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvContinentName"
+                android:id="@+id/tv_continent_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="@string/textContinentName"
+                android:text="@string/text_continent_name"
                 android:textColor="@color/black"
                 android:textSize="23sp"
                 android:textStyle="bold" />
@@ -55,30 +55,30 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/textTitleCases"
+                    android:text="@string/text_title_cases"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     tools:ignore="RelativeOverlap" />
 
                 <TextView
-                    android:id="@+id/tvContinentCase"
+                    android:id="@+id/tv_continent_case"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/tvPeopleCase"
+                    android:layout_toStartOf="@+id/tv_people_case"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/textTotal"
+                    android:text="@string/text_total"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvPeopleCase"
+                    android:id="@+id/tv_people_case"
                     android:layout_width="65dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="5dp"
-                    android:text="@string/textPeople"
+                    android:text="@string/text_people"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </RelativeLayout>
@@ -101,30 +101,30 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/textTitleDeath"
+                    android:text="@string/text_title_death"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     tools:ignore="RelativeOverlap" />
 
                 <TextView
-                    android:id="@+id/tvContinentDeath"
+                    android:id="@+id/tv_continent_death"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/tvPeopleDeath"
+                    android:layout_toStartOf="@+id/tv_people_death"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/textTotal"
+                    android:text="@string/text_total"
                     android:textAlignment="textEnd"
                     android:textColor="@color/red"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvPeopleDeath"
+                    android:id="@+id/tv_people_death"
                     android:layout_width="65dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="5dp"
-                    android:text="@string/textPeople"
+                    android:text="@string/text_people"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -148,30 +148,30 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/textTitleRecover"
+                    android:text="@string/text_title_recover"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     tools:ignore="RelativeOverlap" />
 
                 <TextView
-                    android:id="@+id/tvContinentRecover"
+                    android:id="@+id/tv_continent_recover"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/tvPeopleRecover"
+                    android:layout_toStartOf="@+id/tv_people_recover"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/textTotal"
+                    android:text="@string/text_total"
                     android:textAlignment="textEnd"
                     android:textColor="@color/green1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvPeopleRecover"
+                    android:id="@+id/tv_people_recover"
                     android:layout_width="65dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="5dp"
-                    android:text="@string/textPeople"
+                    android:text="@string/text_people"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 

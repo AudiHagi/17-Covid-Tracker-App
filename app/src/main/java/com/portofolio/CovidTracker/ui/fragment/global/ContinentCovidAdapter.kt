@@ -87,11 +87,11 @@ class ContinentCovidAdapter(
         var cardView: CardView
 
         init {
-            cardView = itemView.findViewById(R.id.cardContinent)
-            tvContinentNameD = itemView.findViewById(R.id.tvContinentName)
-            tvContinentCaseD = itemView.findViewById(R.id.tvContinentCase)
-            tvContinentDeathD = itemView.findViewById(R.id.tvContinentDeath)
-            tvContinentRecoverD = itemView.findViewById(R.id.tvContinentRecover)
+            cardView = itemView.findViewById(R.id.card_continent)
+            tvContinentNameD = itemView.findViewById(R.id.tv_continent_name)
+            tvContinentCaseD = itemView.findViewById(R.id.tv_continent_case)
+            tvContinentDeathD = itemView.findViewById(R.id.tv_continent_death)
+            tvContinentRecoverD = itemView.findViewById(R.id.tv_continent_recover)
         }
     }
 
