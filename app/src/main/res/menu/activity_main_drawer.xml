@@ -12,9 +12,5 @@
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_setting"
             android:title="@string/label_menu_setting" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/label_menu_slideshow" />
     </group>
 </menu>

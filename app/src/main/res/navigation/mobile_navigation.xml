@@ -16,10 +16,4 @@
         android:name="com.portofolio.CovidTracker.ui.fragment.setting.SettingFragment"
         android:label="@string/label_menu_setting"
         tools:layout="@layout/fragment_setting" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.portofolio.CovidTracker.ui.fragment.slideshow.SlideshowFragment"
-        android:label="@string/label_menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
 </navigation>
